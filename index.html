@@ -8,13 +8,13 @@
         <pre class="name_title">
 
  █████╗ ██╗     ███╗   ███╗              ██████╗    ███████╗██╗   ██╗ ██████╗██╗  ██╗███████╗
-██╔══██╗██║     ████╗ ████║              ██╔══██╗   ██╔════╝██║   ██║██╔════╝██║  ██║██╔════╝
+<span id="name_titleEffect1">██╔══██╗██║     ████╗ ████║              ██╔══██╗   ██╔════╝██║   ██║██╔════╝██║  ██║██╔════╝</span>
 ███████║██║     ██╔████╔██║    █████╗    ██████╔╝   █████╗  ██║   ██║██║     ███████║███████╗
 ██╔══██║██║     ██║╚██╔╝██║    ╚════╝    ██╔══██╗   ██╔══╝  ██║   ██║██║     ██╔══██║╚════██║
 ██║  ██║███████╗██║ ╚═╝ ██║              ██████╔╝██╗██║     ╚██████╔╝╚██████╗██║  ██║███████║
 ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝              ╚═════╝ ╚═╝╚═╝      ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝
         </pre>
-        <div>
+        <div id="subtitleQuotes">
             "I am the one who knocks!" - John Cena ( ͡° ͜ʖ ͡°)"
         </div>
     </header>
@@ -23,8 +23,8 @@
     <div class="menu">
         <ul>
             <li><a class="text" href="index.html">About</a></li>
-            <li><a class="text" href="projects.html">Projects</a></li>
-            <li><a class="text" href="contact.html">Contact</a></li>
+            <li><a class="text" href="https://github.com/AlmiranteFuchs" target="_blank">Projects</a></li>
+            <li><a class="text" href="https://wa.me/5544998579172?text=Olá,%20vim%20aqui%20pelo%20seu%20site!" target="_blank">Contact</a></li>
         </ul>
     </div>
 
@@ -32,7 +32,8 @@
         <h3 class="terciary">About me</h3>
         Olá, me chamo Bruno Fuchs Santos da Silva, ou apenas <span class="terciary">"Fuchs"</span>, faço bacharelado em
         ciência da computação na <a href="https://www.ufpr.br/portalufpr/">Universidade Federal do Paraná</a> (UFPR) em
-        Curitiba Paraná. Tenho "INSERT" anos, e mais hobbies e interesses do que consigo contar.
+        Curitiba Paraná. Tenho <span id="yearsEl">TEMPLATE</span> anos, e mais hobbies e interesses do que consigo
+        contar.
     </div>
     <div class="text about">
         <h3 class="terciary">Interests</h3>
@@ -228,6 +229,12 @@
                                     <i class="fas fa-gamepad terciary"></i>
                                 </div>
                             </li>
+                            <li>
+                                <div>
+                                    <span>Blockbench</span>
+                                    <i class="fas fa-gamepad terciary"></i>
+                                </div>
+                            </li>
                         </ul>
                         <ul class="col-6">
                             <li>
@@ -269,13 +276,25 @@
                             <li>
                                 <div>
                                     <span>Vue.js</span>
-                                    <i class="fas fa-gamepad terciary"></i>
+                                    <i class="fas fa-code terciary"></i>
                                 </div>
                             </li>
                             <li>
                                 <div>
                                     <span>React</span>
-                                    <i class="fas fa-gamepad primary"></i>
+                                    <i class="fas fa-code primary"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>Occultism</span>
+                                    <i class="fas fa-user-secret terciary"></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span>Skateboarding</span>
+                                    <i class="fas fa-user-secret terciary"></i>
                                 </div>
                             </li>
                         </ul>
@@ -285,6 +304,10 @@
         </div>
 
 </body>
+
+<footer>
+    © Copyright, 2023
+</footer>
 
 </html>
 
@@ -305,6 +328,59 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
 
+<script>
+    var currentTime = new Date();
+    $().ready(function () {
+        updateDate();
+        updateQuote();
+        updateEffect();
+    })
+
+    function updateDate() {
+        let yearsEl = document.getElementById("yearsEl");
+        let currDate = currentTime.toString();
+        // At the time i'm making this I don't have internet, so fuck Date parameters
+        currDate = currDate.split(" ")[3];
+        yearsEl.innerHTML = currDate - 2002;
+    }
+
+    function updateQuote() {
+        let quoteEl = document.getElementById("subtitleQuotes");
+
+        let quotes =
+            [
+                '"I am the one who knocks!" - John Cena',
+                '"One must imagine sysiphus happy" -  Albert Camus',
+                '"Eat pants" - Bart Simpson',
+                '"Now I am become sleepy, the goer to bed." - J. Robert Oppenheimer, father of the pjs, after drinking warm milk',
+                '"One of the biggest mistakes that people make when they think about memes is they try to extend on the analogy with genes. That’s not how it works. It works by realizing the concept of a replicator." – Susan Blackmore',
+                '"Free will is a myth, Religion is a joke, We are all pawns, controlled by something greater... The memes jack! DNA of the soul." - Monsoon',
+                '"An incredibly sane man showing his saneness in insane ways."- George Kusunoki Miller (joji/Filthy Frank)',
+                '"My life is like my vids, low budget and underrated" - Filthy Frank',
+                '“Well, I tried, and therefore no one should criticize me.” ― Tamsyn Muir, Harrow the Ninth',
+                '"Use the force, luke." - Dumbledore',
+                '"Do, or do not. There is no try". - Dubledore',
+                '"I\'m sorry  dave, i\'m afraid I can\'t do that." - R2D2'
+                ];
+
+        let quote = quotes[Math.floor(Math.random() * (quotes.length - 0))];
+        quoteEl.innerHTML = quote;
+    }
+
+    function updateEffect(troca){
+        let effectEl = document.getElementById("name_titleEffect1")
+        let save = effectEl.innerHTML;
+
+        setInterval(function(){
+            effectEl.innerHTML = "    " + effectEl.innerHTML;
+            setTimeout(function(){
+                effectEl.innerHTML = save;
+            }, 200)
+        }, 1350)
+    }
+</script>
+
+
 <style>
     body {
         background-color: #151922;
@@ -321,6 +397,21 @@
         font-size: smaller;
     }
 
+    footer{
+        color: #D81E5B;
+        font-weight: bold;
+        width: 60%;
+        border-top: dashed 1px #F3E9DC;
+        margin: 20px auto 20px;
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .name_title{
+        overflow-x: hidden;
+        margin-left: calc( (-100vw + 200px ) /2);
+        margin-right: calc( (-100vw + 200px ) /2);
+    }
 
     .name_title:hover {
         color: #D81E5B;
